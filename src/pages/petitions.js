@@ -15,9 +15,13 @@ class Petitions extends React.Component {
         return res.json()
       })
       .then(data => {
-        let petition = data.posts.map(val => {
-          console.log(val)
-          return <div>{val}</div>
+        let petition = data.posts.map(value => {
+          console.log(value)
+          return (
+            <div>
+              <a href={value[1]}>{value[0]}</a>
+            </div>
+          )
         })
         this.setState({ output: petition })
       })

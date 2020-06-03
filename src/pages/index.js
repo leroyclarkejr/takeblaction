@@ -9,16 +9,24 @@ const IndexPage = () => (
   <Layout>
     {/* children are getting passed into layout component */}
     {/* <SEO title="Home" /> */}
-    <Link to="/petitions/">Petitions</Link>
-    <br />
-    <h1>Taking action for black lives</h1>
+
+    <h1>its time for change</h1>
     <p>
-      We've formed a collective working toward defining a word we have termed as
-      #Blact (vverb): to act with the intent of benefitting black lives. Join us
-      as we #takeblaction.
+      #TAKEBLACTION is a diverse group invested in making lasting, positive and
+      impactful change. We've created a collective working to define the term,
+      #Blact (verb): to act with the intent of benefitting black lives.
     </p>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <p>
+      The goal of this collective is to compile resources for black justice into
+      one place so that anyone can easily access and navigate all of the
+      databanks, resources, and links to black justice materials.
+    </p>
+    <p>
+      We recognize that credible black justice resources can be difficult to
+      find. TakeBlaction is here to make these resources as accessible as
+      possible.
+    </p>
+    <Link to="/petitions/">Petitions</Link>
   </Layout>
 )
 
