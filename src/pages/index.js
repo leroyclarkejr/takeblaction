@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
+// import EmailListForm from "../components/mailchimp"
 import change from "../images/change.png"
 import tbblk from "../images/tb-bgblk.png"
 import donate from "../images/donate.png"
@@ -60,7 +61,7 @@ const IndexPage = () => (
           We've made it easy to <span class="bold">share information </span>with
           your friends and communities compiling all of the circulating{" "}
           <span class="bold">black justice resources </span>
-          into one place.
+          into <span class="bold"></span>one place.
         </p>
 
         <p>
@@ -73,7 +74,7 @@ const IndexPage = () => (
           If you'd like to get more involved with the collective, please email
           us a message at takingblaction@gmail.com for more information.
         </p>
-        <p>- Delia and the tb. team</p>
+        <p>- Delia and the Take Blaction Team</p>
       </div>
     </div>
 
@@ -82,8 +83,13 @@ const IndexPage = () => (
         #Blact (verb): to act with the intent of benefiting black lives. <br />
         Join us as we #takeblaction
       </h3>
+      {/* <EmailListForm /> */}
     </div>
   </Layout>
 )
 
 export default IndexPage
+
+{
+  /* <form action="//mc.us10.list-manage.com/signup-form/subscribe?u=1265fbb10296b33af3ae2993b&amp;id=00d69fe1f0 */
+}
