@@ -4,13 +4,16 @@ import React from "react"
 import takeblaction from "../images/takeblaction.png"
 
 const Header = ({ siteTitle }) => (
-  <header>
+  <header id="header">
     <h1>
-      <img src={takeblaction}></img>
+      <Link to="/">
+        <img src={takeblaction}></img>
+      </Link>
     </h1>
+
     <nav>
-      <a>Home</a>
-      <a>Contact Us</a>
+      <a href="#about-us">About us</a>
+      <a>How to help</a>
     </nav>
   </header>
 )

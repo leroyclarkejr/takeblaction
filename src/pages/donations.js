@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 
-class Petitions extends React.Component {
+class Donate extends React.Component {
   constructor(props) {
     super(props)
     this.state = { output: "...loading" }
@@ -15,7 +15,8 @@ class Petitions extends React.Component {
         return res.json()
       })
       .then(data => {
-        let petition = data.petitions.map(value => {
+        console.log(data)
+        let donation = data.donations.map(value => {
           console.log(value)
           return (
             <div className="data">
@@ -23,7 +24,7 @@ class Petitions extends React.Component {
             </div>
           )
         })
-        this.setState({ output: petition })
+        this.setState({ output: donation })
       })
   }
 
@@ -36,4 +37,4 @@ class Petitions extends React.Component {
   }
 }
 
-export default Petitions
+export default Donate
