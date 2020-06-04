@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => (
 
     <nav>
       <a href="#about-us">About us</a>
-      <a>How to help</a>
+      {/* <a>How to help</a> */}
     </nav>
   </header>
 )

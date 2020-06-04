@@ -53,18 +53,19 @@ h3 {
 }
 
 #hero {
-  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 100px;
   background-color: black;
   color: white;
-  height: 100vh;
+  // height: 100vh;
 
   div {
     width: 50%;
     padding: 40px;
+    max-width: 500px;
 
     h2 {
       margin-bottom: 20px;
@@ -107,6 +108,8 @@ h3 {
 
   .data {
     margin: 20px;
+    max-width: 500px;
+    text-align: center;
 
     a {
       font-family: $heading-font;
@@ -115,5 +118,19 @@ h3 {
       color: black;
       text-decoration: none;
     }
+  }
+}
+
+@media (max-width: 750px) {
+  #hero {
+    flex-direction: column;
+    div {
+      width: 100%;
+      padding: 40px;
+      max-width: 500px;
+    }
+  }
+  #data-container {
+    padding: 40px 20px 40px 20px;
   }
 }
