@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
     </h1>
 
     <nav>
-      <a href="#about-us">About us</a>
+      <a>✊🏾</a>
       {/* <a>How to help</a> */}
     </nav>
   </header>

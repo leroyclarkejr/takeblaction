@@ -12,7 +12,7 @@ const IndexPage = () => (
   <Layout>
     {/* children are getting passed into layout component */}
     {/* <SEO title="Home" /> */}
-
+    <div></div>
     <div id="hero">
       <div>
         <img src={tbblk}></img>
@@ -21,7 +21,8 @@ const IndexPage = () => (
       <div>
         <h2>its time for change.</h2>
         <p>
-          The goal of this collective is to compile resources for black justice
+          The goal of this collective is to compile{" "}
+          <span className="bold">resources for black justice </span>
           into one place so that anyone can easily access and navigate all of
           the databanks, resources, and links to black justice materials.
         </p>
@@ -52,7 +53,36 @@ const IndexPage = () => (
 
     <div id="about-us"></div>
 
-    <div id="contact"></div>
+    <div id="contact">
+      <div>
+        <h2>How to help:</h2>
+        <p>
+          We've made it easy to <span class="bold">share information </span>with
+          your friends and communities compiling all of the circulating{" "}
+          <span class="bold">black justice resources </span>
+          into one place.
+        </p>
+
+        <p>
+          We are looking for more <span class="bold">volunteers</span> to curate
+          more resources and
+          <span class="bold">empower the black community!</span>
+        </p>
+
+        <p>
+          If you'd like to get more involved with the collective, please email
+          us a message at takingblaction@gmail.com for more information.
+        </p>
+        <p>- Delia and the tb. team</p>
+      </div>
+    </div>
+
+    <div id="cta">
+      <h3>
+        #Blact (verb): to act with the intent of benefiting black lives. <br />
+        Join us as we #takeblaction
+      </h3>
+    </div>
   </Layout>
 )
 

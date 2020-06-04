@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 class Donate extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { output: "...loading" }
+    this.state = { output: "Making sure things are up to date!" }
   }
 
   componentDidMount() {

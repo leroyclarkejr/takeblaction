@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
       <div>
         <main>{children}</main>
         <footer id="footer">
-          Take blaction © {new Date().getFullYear()}, Built with
+          Take Blaction © {new Date().getFullYear()}, Made with
           {` `}
           <span>❤️</span>
         </footer>
