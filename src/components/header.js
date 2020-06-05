@@ -3,18 +3,36 @@ import PropTypes from "prop-types"
 import React from "react"
 import takeblaction from "../images/takeblaction.png"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, menuLinks }) => (
   <header id="header">
     <h1>
       <Link to="/">
-        <img src={takeblaction}></img>
+        <img
+          src={takeblaction}
+          alt="Taking action to benefit black lives."
+        ></img>
       </Link>
     </h1>
 
-    <nav>
-      <a>✊🏾</a>
-      {/* <a>How to help</a> */}
-    </nav>
+    <div>
+      <nav>
+        <ul style={{ display: "flex", flex: 1 }}>
+          {menuLinks.map(link => (
+            <li
+              key={link.name}
+              style={{
+                listStyleType: `none`,
+                padding: `1rem`,
+              }}
+            >
+              <Link style={{ color: `black` }} to={link.link}>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   </header>
 )
 

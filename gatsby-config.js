@@ -1,12 +1,27 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Take Blaction`,
     description: `Taking action for black lives`,
     author: `@ldcjr`,
+    menuLinks: [
+      {
+        name: "Petitions",
+        link: "/petitions",
+      },
+      {
+        name: "Donations",
+        link: "/donations",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,8 +47,13 @@ module.exports = {
       resolve: "gatsby-plugin-mailchimp",
       options: {
         endpoint:
-          "//mc.us10.list-manage.com/signup-form/subscribe?u=1265fbb10296b33af3ae2993b&amp;id=00d69fe1f0",
-        timeout: 3500,
+          "https://takeblaction.us10.list-manage.com/subscribe/post?u=1265fbb10296b33af3ae2993b&amp;id=c2552faff7",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-167200825-2",
       },
     },
   ],

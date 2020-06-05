@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-// import EmailListForm from "../components/mailchimp"
-import change from "../images/change.png"
-import tbblk from "../images/tb-bgblk.png"
+import Mailchimp from "../components/mailchimp"
+// import change from "../images/change.png"
+import tbblk from "../images/tb-bgwht.png"
 import donate from "../images/donate.png"
 import sign from "../images/sign.png"
 // import SEO from "../components/seo"
@@ -16,7 +16,7 @@ const IndexPage = () => (
     <div></div>
     <div id="hero">
       <div>
-        <img src={tbblk}></img>
+        <img src={tbblk} alt="Take blaction"></img>
       </div>
 
       <div>
@@ -31,12 +31,16 @@ const IndexPage = () => (
     </div>
 
     <div id="take-blaction">
+      <h2>Resources for black justice</h2>
       <Link to="/petitions/" className="main-link">
-        <img src={sign}></img>
+        <img src={sign} alt="This is where you can sign petitions."></img>
         <h3>Petitions</h3>
       </Link>
       <Link to="/donations/" className="main-link">
-        <img src={donate}></img>
+        <img
+          src={donate}
+          alt="This is where you can donate to charities and non-profit organizations"
+        ></img>
         <h3>Donate</h3>
       </Link>
     </div>
@@ -58,32 +62,36 @@ const IndexPage = () => (
       <div>
         <h2>How to help:</h2>
         <p>
-          We've made it easy to <span class="bold">share information </span>with
-          your friends and communities compiling all of the circulating{" "}
-          <span class="bold">black justice resources </span>
-          into <span class="bold"></span>one place.
+          We've made it easy to<span class="bold"> share information </span>with
+          your friends and communities compiling all of the circulating
+          <span class="bold"> black justice resources </span>
+          into one place
         </p>
 
         <p>
-          We are looking for more <span class="bold">volunteers</span> to curate
-          more resources and
-          <span class="bold">empower the black community!</span>
+          We are looking for more volunteers to curate more resources
+          and empower the black community!
         </p>
 
         <p>
           If you'd like to get more involved with the collective, please email
-          us a message at takingblaction@gmail.com for more information.
+          us a message at <strong> takeblaction@gmail.com </strong>for more
+          information.
         </p>
-        <p>- Delia and the Take Blaction Team</p>
+        <p>
+          Made with <span role="img">❤️</span>
+          <br />
+          the tb. team
+        </p>
       </div>
     </div>
 
     <div id="cta">
       <h3>
-        #Blact (verb): to act with the intent of benefiting black lives. <br />
-        Join us as we #takeblaction
+        #Blact (verb): to act with the intent of benefiting black lives. Join us
+        as we #takeblaction
       </h3>
-      {/* <EmailListForm /> */}
+      <Mailchimp />
     </div>
   </Layout>
 )

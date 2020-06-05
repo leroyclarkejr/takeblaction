@@ -30,7 +30,10 @@ class Petitions extends React.Component {
   render() {
     return (
       <Layout>
-        <div id="data-container">{this.state.output}</div>
+        <div id="data-container">
+          <h1>Petitions make a difference.</h1>
+          {this.state.output}
+        </div>
       </Layout>
     )
   }

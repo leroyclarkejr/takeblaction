@@ -1,35 +1,51 @@
-// import React from "react"
-// import addToMailchimp from "gatsby-plugin-mailchimp"
+import React from "react"
+import addToMailchimp from "gatsby-plugin-mailchimp"
+import TextField from "@material-ui/core/TextField"
+import Button from "@material-ui/core/Button"
+import { Typography } from "@material-ui/core"
 
-// class Mailchimp extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = ""
-//   }
-//   _handleSubmit = e => {
-//     e.preventDefault()
-//     addToMailchimp(email) // listFields are optional if you are only capturing the email address.
-//       .then(data => {
-//         // I recommend setting data to React state
-//         // but you can do whatever you want (including ignoring this `then()` altogether)
-//         console.log(data)
-//       })
-//       .catch(() => {
-//         // unnecessary because Mailchimp only ever
-//         // returns a 200 status code
-//         // see below for how to handle errors
-//         result: string // either `success` or `error` (helpful to use this key to update your state)
-//         msg: string
-//       })
-//   }
+class Mailchimp extends React.Component {
+  constructor() {
+    super()
+    this.state = { email: "", result: null }
+  }
+  _handleSubmit = async e => {
+    e.preventDefault()
+    const result = await addToMailchimp(this.state.email)
+    this.setState({ result: result })
+  }
 
-//   render() {
-//     return (
-//       <form onSubmit={this._handleSubmit(email)}>
-//         <input type="text" name="email"></input>
-//       </form>
-//     )
-//   }
-// }
+  handleChange = event => {
+    this.setState({ email: event.target.value })
+  }
+  render() {
+    return this.state.result === "success " ? (
+      <div>SUCCESS</div>
+    ) : this.state.result === "error" ? (
+      <div>ERROR</div>
+    ) : (
+      <form onSubmit={this._handleSubmit}>
+        <TextField
+          id="outlined-email-input"
+          label="Email"
+          type="email"
+          name="email"
+          autoComplete="email"
+          variant="outlined"
+          onChange={this.handleChange}
+        />
+        <br />
+        <Button
+          variant="contained"
+          color="primary"
+          label="Submit"
+          type="submit"
+        >
+          <Typography variant="button">Envoyer</Typography>
+        </Button>
+      </form>
+    )
+  }
+}
 
-// export default Mailchimp
+export default Mailchimp
