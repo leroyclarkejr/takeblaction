@@ -31,7 +31,6 @@ const IndexPage = () => (
     </div>
 
     <div id="take-blaction">
-      <h2>Resources for black justice</h2>
       <Link to="/petitions/" className="main-link">
         <img src={sign} alt="This is where you can sign petitions."></img>
         <h3>Petitions</h3>
@@ -42,6 +41,30 @@ const IndexPage = () => (
           alt="This is where you can donate to charities and non-profit organizations"
         ></img>
         <h3>Donate</h3>
+      </Link>
+      <Link to="/books/" className="main-link">
+        <img src={sign} alt="This is where you can sign books."></img>
+        <h3>books</h3>
+      </Link>
+      <Link to="/businesses/" className="main-link">
+        <img src={sign} alt="This is where you can sign businesses."></img>
+        <h3>businesses</h3>
+      </Link>
+      <Link to="/documentaries/" className="main-link">
+        <img src={sign} alt="This is where you can sign petitions."></img>
+        <h3>Documentaries</h3>
+      </Link>
+      <Link to="/nonprofit/" className="main-link">
+        <img src={sign} alt="This is where you can sign petitions."></img>
+        <h3>Nonprofit</h3>
+      </Link>
+      <Link to="/podcasts/" className="main-link">
+        <img src={sign} alt="This is where you can sign petitions."></img>
+        <h3>Podcasts</h3>
+      </Link>
+      <Link to="/social/" className="main-link">
+        <img src={sign} alt="This is where you can sign petitions."></img>
+        <h3>Social Media</h3>
       </Link>
     </div>
     {/* <p>
