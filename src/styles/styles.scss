@@ -89,11 +89,11 @@ h3 {
 #jump-links {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   // padding-top: 200px;
   background-color: $black;
   padding: 20px 10px 20px 10px;
-  overflow: hidden;
+  overflow: scroll;
 
   // color: white;
 
