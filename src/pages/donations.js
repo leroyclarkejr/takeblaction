@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import LaunchIcon from "@material-ui/icons/Launch"
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
 
 class Donate extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Donate extends React.Component {
               // onMouseLeave={this.nohover}
             >
               <a href={value[1]}>{value[0]}</a>
-              <LaunchIcon width="10px"></LaunchIcon>
+              <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
 
               {/* <hr class="solid"></hr>openlin */}
             </div>

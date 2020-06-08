@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Petitions from "./petitions"
 import Mailchimp from "../components/mailchimp"
+import Button from "@material-ui/core/Button"
 
 import tbblk from "../images/tb-bgwht.png"
 
@@ -26,6 +27,8 @@ const IndexPage = ({ children }) => (
           into one place so that anyone can easily access and navigate all of
           the databanks, resources, and links to black justice materials.
         </p>
+
+        <Button variant="contained">GET RESOURCES FOR BLACK JUSTICE</Button>
       </div>
     </div>
 

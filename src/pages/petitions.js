@@ -1,12 +1,16 @@
 import React from "react"
 import Layout from "../components/layout"
-import LaunchIcon from "@material-ui/icons/Launch"
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
 // import Button from "@material-ui/core/Button"
 
 class Petitions extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { output: "Making sure things are up to date!" }
+    this.state = {
+      output: "Making sure things are up to date!",
+      hits: [],
+      isLoading: false,
+    }
     // this.hover = this.hover.bind(this)
     // this.nohover = this.nohover.bind(this)
   }
@@ -29,7 +33,7 @@ class Petitions extends React.Component {
               // onMouseLeave={this.nohover}
             >
               <a href={value[1]}>{value[0]}</a>
-              <LaunchIcon width="10px"></LaunchIcon>
+              <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
 
               {/* <hr class="solid"></hr>openlin */}
             </div>

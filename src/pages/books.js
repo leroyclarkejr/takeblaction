@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import LaunchIcon from "@material-ui/icons/Launch"
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
 
 class Books extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class Books extends React.Component {
                 {value[0]} by {value[1]}
               </a>
 
-              <LaunchIcon></LaunchIcon>
+              <KeyboardArrowRightIcon></KeyboardArrowRightIcon>
 
               {/* <hr class="solid"></hr>openlin */}
             </div>
