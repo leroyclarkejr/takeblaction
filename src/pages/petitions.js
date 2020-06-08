@@ -8,6 +8,8 @@ class Petitions extends React.Component {
   constructor(props) {
     super(props)
     this.state = { output: "Making sure things are up to date!" }
+    // this.hover = this.hover.bind(this)
+    // this.nohover = this.nohover.bind(this)
   }
 
   componentDidMount() {
@@ -21,7 +23,11 @@ class Petitions extends React.Component {
         let petition = data.petitions.map(value => {
           console.log(value)
           return (
-            <div className="data">
+            <div
+              className="data"
+              // onMouseEnter={this.hover}
+              // onMouseLeave={this.nohover}
+            >
               <a href={value[1]}>{value[0]}</a>
               <LaunchIcon width="10px"></LaunchIcon>
 
@@ -32,6 +38,14 @@ class Petitions extends React.Component {
         this.setState({ output: petition })
       })
   }
+
+  // hover(e) {
+  //   e.target.style.backgroundColor = "red"
+  // }
+
+  // nohover(e) {
+  //   e.target.style.backgroundColor = "#16181c"
+  // }
 
   render() {
     return (

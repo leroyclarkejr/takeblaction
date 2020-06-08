@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
       <div>
         {/* <Herosection /> */}
         <Jumplinks />
-        <main>{children}</main>
+        <div id="main-content">{children}</div>
 
         <footer id="footer">
           Take Blaction © {new Date().getFullYear()}, Made with
