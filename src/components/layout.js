@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Jumplinks from "./jumplinks"
+import Herosection from "./herosection"
 import "../styles/base.css"
 import "../styles/styles.scss"
 import "../styles/styles.css"
@@ -35,8 +37,12 @@ const Layout = ({ children }) => {
         menuLinks={data.site.siteMetadata.menuLinks}
         siteTitle={data.site.siteMetadata.title}
       />
+
       <div>
+        {/* <Herosection /> */}
+        <Jumplinks />
         <main>{children}</main>
+
         <footer id="footer">
           Take Blaction © {new Date().getFullYear()}, Made with
           {` `}

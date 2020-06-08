@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
+import Petitions from "./petitions"
 import Mailchimp from "../components/mailchimp"
 // import change from "../images/change.png"
 import tbblk from "../images/tb-bgwht.png"
@@ -9,12 +10,12 @@ import donate from "../images/donate.png"
 import sign from "../images/sign.png"
 // import SEO from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = ({ children }) => (
   <Layout>
     {/* children are getting passed into layout component */}
     {/* <SEO title="Home" /> */}
-    <div></div>
-    <div id="hero">
+
+    {/* <div id="hero">
       <div>
         <img src={tbblk} alt="Take blaction"></img>
       </div>
@@ -28,45 +29,8 @@ const IndexPage = () => (
           the databanks, resources, and links to black justice materials.
         </p>
       </div>
-    </div>
+    </div> */}
 
-    <div id="take-blaction">
-      <Link to="/petitions/" className="main-link">
-        <img src={sign} alt="This is where you can sign petitions."></img>
-        <h3>Petitions</h3>
-      </Link>
-      <Link to="/donations/" className="main-link">
-        <img
-          src={donate}
-          alt="This is where you can donate to charities and non-profit organizations"
-        ></img>
-        <h3>Donate</h3>
-      </Link>
-      <Link to="/books/" className="main-link">
-        <img src={sign} alt="This is where you can sign books."></img>
-        <h3>books</h3>
-      </Link>
-      <Link to="/businesses/" className="main-link">
-        <img src={sign} alt="This is where you can sign businesses."></img>
-        <h3>businesses</h3>
-      </Link>
-      <Link to="/documentaries/" className="main-link">
-        <img src={sign} alt="This is where you can sign petitions."></img>
-        <h3>Documentaries</h3>
-      </Link>
-      <Link to="/nonprofit/" className="main-link">
-        <img src={sign} alt="This is where you can sign petitions."></img>
-        <h3>Nonprofit</h3>
-      </Link>
-      <Link to="/podcasts/" className="main-link">
-        <img src={sign} alt="This is where you can sign petitions."></img>
-        <h3>Podcasts</h3>
-      </Link>
-      <Link to="/social/" className="main-link">
-        <img src={sign} alt="This is where you can sign petitions."></img>
-        <h3>Social Media</h3>
-      </Link>
-    </div>
     {/* <p>
         #TAKEBLACTION is a diverse group invested in making lasting, positive
         and impactful change. We've created a collective working to define the
@@ -79,9 +43,7 @@ const IndexPage = () => (
         possible.
       </p> */}
 
-    <div id="about-us"></div>
-
-    <div id="contact">
+    {/* <div id="contact">
       <div>
         <h2>How to help:</h2>
         <p>
@@ -107,15 +69,15 @@ const IndexPage = () => (
           the tb. team
         </p>
       </div>
-    </div>
+    </div> */}
 
-    <div id="cta">
+    {/* <div id="cta">
       <h3>
         #Blact (verb): to act with the intent of benefiting black lives. Join us
         as we #takeblaction
       </h3>
       <Mailchimp />
-    </div>
+    </div> */}
   </Layout>
 )
 

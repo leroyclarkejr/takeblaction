@@ -9,12 +9,12 @@ module.exports = {
     author: `@ldcjr`,
     menuLinks: [
       {
-        name: "Petitions",
-        link: "/petitions",
+        name: "About us",
+        link: "/about",
       },
       {
-        name: "Donations",
-        link: "/donations",
+        name: "Blact now",
+        link: "/petitions",
       },
     ],
   },
@@ -25,12 +25,12 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        path: "./data/",
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    "gatsby-transformer-json",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

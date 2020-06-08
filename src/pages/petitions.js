@@ -1,5 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
+import openlink from "../images/openlink.svg"
+import LaunchIcon from "@material-ui/icons/Launch"
+// import Button from "@material-ui/core/Button"
 
 class Petitions extends React.Component {
   constructor(props) {
@@ -20,6 +23,9 @@ class Petitions extends React.Component {
           return (
             <div className="data">
               <a href={value[1]}>{value[0]}</a>
+              <LaunchIcon width="10px"></LaunchIcon>
+
+              {/* <hr class="solid"></hr>openlin */}
             </div>
           )
         })
@@ -31,7 +37,10 @@ class Petitions extends React.Component {
     return (
       <Layout>
         <div id="data-container">
-          <h1>Petitions make a difference.</h1>
+          <h2>
+            Take #Blaction now<span> ✊🏾</span>
+          </h2>
+          <h4>Petitions</h4>
           {this.state.output}
         </div>
       </Layout>
