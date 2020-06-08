@@ -16,7 +16,7 @@
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-manifest": "^2.4.9",
     "gatsby-plugin-material-ui": "^2.1.9",
-    "gatsby-plugin-offline": "^3.2.7",
+    "gatsby-plugin-offline": "^3.2.8",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-sass": "^2.3.3",
     "gatsby-plugin-sharp": "^2.6.10",

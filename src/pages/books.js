@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import LaunchIcon from "@material-ui/icons/Launch"
 
 class Books extends React.Component {
   constructor(props) {
@@ -8,19 +9,29 @@ class Books extends React.Component {
   }
 
   componentDidMount() {
-    fetch(
-      "https://script.googleusercontent.com/macros/echo?user_content_key=mYmgHnlrxwR9YtCB9E_QyG8C7RotfpQmT4Fw9Tn3YA1fTWzgyrNCLloRe6_JOana8EVElZx0Lg_MPfZ-oKRLgo3NlhxxzX_ym5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDSs5sRgD1ac-h3oV3AasSem-5e7OFQzXI5YTTJP454RdAgflvzraAzfveALHdp65b3s74y5e3r9&lib=MpXQzipjhDujhrJj9-lpphnKgdv5WXFdI"
-    )
+    const url =
+      "https://script.google.com/macros/s/AKfycbwkigQInS7P-ETReftDOC-ei4MfZuhb7Ft4EL0o9V-6TjYZjW9W/exec"
+    fetch(url)
       .then(res => {
+        console.log(res)
         return res.json()
       })
       .then(data => {
         console.log(data)
         let book = data.books.map(value => {
-          console.log(value)
           return (
-            <div className="data">
-              <a href={value[1]}>{value[0]}</a>
+            <div
+              className="data"
+              // onMouseEnter={this.hover}
+              // onMouseLeave={this.nohover}
+            >
+              <a href={value[3]}>
+                {value[0]} by {value[1]}
+              </a>
+
+              <LaunchIcon></LaunchIcon>
+
+              {/* <hr class="solid"></hr>openlin */}
             </div>
           )
         })
@@ -28,10 +39,24 @@ class Books extends React.Component {
       })
   }
 
+  // hover(e) {
+  //   e.target.style.backgroundColor = "red"
+  // }
+
+  // nohover(e) {
+  //   e.target.style.backgroundColor = "#16181c"
+  // }
+
   render() {
     return (
       <Layout>
-        <div id="data-container">{this.state.output}</div>
+        <div id="data-container">
+          <h2>
+            Take #Blaction now<span> ✊🏾</span>
+          </h2>
+          <h4>Books</h4>
+          {this.state.output}
+        </div>
       </Layout>
     )
   }

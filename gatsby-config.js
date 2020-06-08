@@ -10,11 +10,11 @@ module.exports = {
     menuLinks: [
       {
         name: "About us",
-        link: "/about",
+        link: "/",
       },
       {
         name: "Blact now",
-        link: "/petitions",
+        link: "/petitions/",
       },
     ],
   },
@@ -22,10 +22,10 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-material-ui`,
-
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    "gatsby-transformer-json",
+    `gatsby-plugin-offline`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

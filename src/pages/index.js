@@ -4,18 +4,16 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Petitions from "./petitions"
 import Mailchimp from "../components/mailchimp"
-// import change from "../images/change.png"
+
 import tbblk from "../images/tb-bgwht.png"
-import donate from "../images/donate.png"
-import sign from "../images/sign.png"
+
 // import SEO from "../components/seo"
 
 const IndexPage = ({ children }) => (
   <Layout>
-    {/* children are getting passed into layout component */}
     {/* <SEO title="Home" /> */}
 
-    {/* <div id="hero">
+    <div id="hero">
       <div>
         <img src={tbblk} alt="Take blaction"></img>
       </div>
@@ -29,21 +27,21 @@ const IndexPage = ({ children }) => (
           the databanks, resources, and links to black justice materials.
         </p>
       </div>
-    </div> */}
+    </div>
 
     {/* <p>
-        #TAKEBLACTION is a diverse group invested in making lasting, positive
-        and impactful change. We've created a collective working to define the
-        term, #Blact (verb): to act with the intent of benefitting black lives.
-      </p> */}
-    {/* 
-      <p>
-        We recognize that credible black justice resources can be difficult to
-        find. TakeBlaction is here to make these resources as accessible as
-        possible.
-      </p> */}
+      #TAKEBLACTION is a diverse group invested in making lasting, positive and
+      impactful change. We've created a collective working to define the term,
+      #Blact (verb): to act with the intent of benefitting black lives.
+    </p>
 
-    {/* <div id="contact">
+    <p>
+      We recognize that credible black justice resources can be difficult to
+      find. TakeBlaction is here to make these resources as accessible as
+      possible.
+    </p> */}
+
+    <div id="contact">
       <div>
         <h2>How to help:</h2>
         <p>
@@ -69,7 +67,7 @@ const IndexPage = ({ children }) => (
           the tb. team
         </p>
       </div>
-    </div> */}
+    </div>
 
     {/* <div id="cta">
       <h3>

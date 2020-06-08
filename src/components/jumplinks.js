@@ -30,7 +30,7 @@ class Jumplinks extends React.Component {
         <Link to="/businesses/" className="main-link" activeClassName="active">
           <h3>Black Owned Businesses</h3>
         </Link>
-        <Link
+        {/* <Link
           to="/documentaries/"
           className="main-link"
           activeClassName="active"
@@ -45,7 +45,7 @@ class Jumplinks extends React.Component {
         </Link>
         <Link to="/social/" className="main-link" activeClassName="active">
           <h3>Social Media</h3>
-        </Link>
+        </Link> */}
       </div>
     )
   }
