@@ -27,6 +27,16 @@ class Jumplinks extends React.Component {
         <Link to="/books/" className="main-link" activeClassName="active">
           <h3>Books</h3>
         </Link>
+        <Link to="/podcasts/" className="main-link" activeClassName="active">
+          <h3>Podcasts</h3>
+        </Link>
+        <Link
+          to="/documentaries/"
+          className="main-link"
+          activeClassName="active"
+        >
+          <h3>Documentaries</h3>
+        </Link>
         <Link to="/businesses/" className="main-link" activeClassName="active">
           <h3>Black Owned Businesses</h3>
         </Link>

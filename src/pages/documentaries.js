@@ -1,40 +1,47 @@
 import React from "react"
 import Layout from "../components/layout"
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
+import { graphql } from "gatsby"
 
-class Documentaries extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { output: "Making sure things are up to date!" }
-  }
+const Documentaries = ({ data }) => {
+  return (
+    <Layout>
+      <div id="data-container">
+        <h2>
+          Take #Blaction now<span> ✊🏾</span>
+        </h2>
+        <h4>documentaries</h4>
 
-  componentDidMount() {
-    fetch(
-      "https://script.google.com/macros/s/AKfycbwkigQInS7P-ETReftDOC-ei4MfZuhb7Ft4EL0o9V-6TjYZjW9W/exec"
-    )
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        console.log(data)
-        let documentary = data.documentaries.map(value => {
-          console.log(value)
-          return (
-            <div className="data">
-              <a href={value[1]}>{value[0]}</a>
-            </div>
-          )
-        })
-        this.setState({ output: documentary })
-      })
-  }
-
-  render() {
-    return (
-      <Layout>
-        <div id="data-container">{this.state.output}</div>
-      </Layout>
-    )
-  }
+        {getDocumentariesData(data)}
+      </div>
+    </Layout>
+  )
 }
+
+function getDocumentariesData(data) {
+  const documentariesArray = []
+  data.allDocumentaries.edges.forEach(item =>
+    documentariesArray.push(
+      <div className="data">
+        <a>{item.node.title}</a>
+
+        <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
+      </div>
+    )
+  )
+  return documentariesArray
+}
+
+export const query = graphql`
+  query DocumentariesPageQuery {
+    allDocumentaries {
+      edges {
+        node {
+          title
+        }
+      }
+    }
+  }
+`
 
 export default Documentaries

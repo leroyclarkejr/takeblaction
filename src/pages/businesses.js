@@ -1,40 +1,50 @@
 import React from "react"
 import Layout from "../components/layout"
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
+import { graphql } from "gatsby"
 
-class Businesses extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { output: "Making sure things are up to date!" }
-  }
+const Businesses = ({ data }) => {
+  return (
+    <Layout>
+      <div id="data-container">
+        <h2>
+          Take #Blaction now<span> ✊🏾</span>
+        </h2>
+        <h4>businesses</h4>
 
-  componentDidMount() {
-    fetch(
-      "https://script.google.com/macros/s/AKfycbwkigQInS7P-ETReftDOC-ei4MfZuhb7Ft4EL0o9V-6TjYZjW9W/exec"
-    )
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        console.log(data)
-        let business = data.businesses.map(value => {
-          console.log(value)
-          return (
-            <div className="data">
-              <a href={value[1]}>{value[0]}</a>
-            </div>
-          )
-        })
-        this.setState({ output: business })
-      })
-  }
-
-  render() {
-    return (
-      <Layout>
-        <div id="data-container">{this.state.output}</div>
-      </Layout>
-    )
-  }
+        {getBusinessesData(data)}
+      </div>
+    </Layout>
+  )
 }
+
+function getBusinessesData(data) {
+  const businessesArray = []
+  data.allBusinesses.edges.forEach(item =>
+    businessesArray.push(
+      <div className="data">
+        <a href={item.node.website}>{item.node.name}</a>
+        <p>Category: {item.node.category}</p>
+
+        <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
+      </div>
+    )
+  )
+  return businessesArray
+}
+
+export const query = graphql`
+  query BusinessesPageQuery {
+    allBusinesses {
+      edges {
+        node {
+          name
+          category
+          website
+        }
+      }
+    }
+  }
+`
 
 export default Businesses

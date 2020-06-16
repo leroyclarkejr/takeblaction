@@ -1,40 +1,48 @@
 import React from "react"
 import Layout from "../components/layout"
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
+import { graphql } from "gatsby"
 
-class Podcasts extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { output: "Making sure things are up to date!" }
-  }
+const Podcasts = ({ data }) => {
+  return (
+    <Layout>
+      <div id="data-container">
+        <h2>
+          Take #Blaction now<span> ✊🏾</span>
+        </h2>
+        <h4>podcasts</h4>
 
-  componentDidMount() {
-    fetch(
-      "https://script.google.com/macros/s/AKfycbwkigQInS7P-ETReftDOC-ei4MfZuhb7Ft4EL0o9V-6TjYZjW9W/exec"
-    )
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        console.log(data)
-        let podcast = data.podcasts.map(value => {
-          console.log(value)
-          return (
-            <div className="data">
-              <a href={value[1]}>{value[0]}</a>
-            </div>
-          )
-        })
-        this.setState({ output: podcast })
-      })
-  }
-
-  render() {
-    return (
-      <Layout>
-        <div id="data-container">{this.state.output}</div>
-      </Layout>
-    )
-  }
+        {getPodcastsData(data)}
+      </div>
+    </Layout>
+  )
 }
+
+function getPodcastsData(data) {
+  const podcastsArray = []
+  data.allPodcasts.edges.forEach(item =>
+    podcastsArray.push(
+      <div className="data">
+        <a href={item.node.link}>{item.node.title}</a>
+
+        <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
+      </div>
+    )
+  )
+  return podcastsArray
+}
+
+export const query = graphql`
+  query PodcastsPageQuery {
+    allPodcasts {
+      edges {
+        node {
+          title
+          link
+        }
+      }
+    }
+  }
+`
 
 export default Podcasts
