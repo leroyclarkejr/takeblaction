@@ -3,6 +3,8 @@ import Layout from "../components/layout"
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
 import { graphql } from "gatsby"
 
+// import ControlledExpansionPanels from "../components/expansionpanel"
+
 const Petitions = ({ data }) => {
   return (
     <Layout>
@@ -20,13 +22,14 @@ const Petitions = ({ data }) => {
 
 function getPetitionsData(data) {
   const petitionsArray = []
-  data.allPetitions.edges.forEach(item =>
-    petitionsArray.push(
-      <div className="data">
-        <a href={item.node.link}>{item.node.name}</a>
-        <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
-      </div>
-    )
+  data.allPetitions.edges.forEach(
+    item =>
+      petitionsArray.push(
+        <div className="data">
+          <a href={item.node.link}>{item.node.name}</a>
+          <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
+        </div>
+      )``
   )
   return petitionsArray
 }
