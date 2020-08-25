@@ -26,6 +26,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
+    `webflow-api`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -40,37 +40,91 @@ h3 {
 }
 
 #header {
-  background-color: white;
-  color: $black;
+  background-color: $black;
+  color: white;
   width: 100%;
-  // position: fixed;
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px 40px 10px 40px;
+  border-bottom: 1px solid white;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+  position: relative;
 
   img {
     width: 250px;
     z-index: 2;
   }
-  // a {
-  //   font-size: 20px;
-  //   margin-left: 10px;
-  //   color: $black;
-  //   font-family: $heading-font;
-  //   font-weight: 600;
-  // }
 
   #nav {
-    li {
-      font-family: $poppins;
-      font-weight: 700;
-      text-decoration: none;
-      white-space: nowrap;
+    // position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: white;
+      height: 100vh;
+      width: 350px;
+      text-align: right;
+      padding: 2rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      // transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      // transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
     }
+    a {
+      font-size: 20px;
+      font-family: $poppins;
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin: 1rem 0;
+      // font-weight: bold;
+      letter-spacing: 0.5rem;
+      color: $black;
+      text-decoration: none;
+      transition: color 0.3s linear;
+    }
+  }
+}
+//NAV Buttons
+
+.nav-button {
+  // position: absolute;
+  top: 3%;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  transition: all 0.3s linear;
+
+  &:focus {
+    outline: none;
+  }
+  div {
+    width: 2rem;
+    height: 0.25rem;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
   }
 }
 
