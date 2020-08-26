@@ -5,13 +5,13 @@ import Layout from "../components/layout"
 import DataList from "../components/datalist"
 
 export const query = graphql`
-  query MyPetitionsQuery {
-    allTakeBlactionPetitionsCsv {
+  query MyVoteQuery {
+    allTakeBlactionVoteCsv {
       edges {
         node {
           Name
           Short_description
-          Long_Description
+          Long_description
           Thumbnail
           External_Link
         }
@@ -20,37 +20,37 @@ export const query = graphql`
   }
 `
 
-const Petitions = ({ data }) => {
-  function getPetitionsData(data) {
-    const petitionsArray = []
-    data.allTakeBlactionPetitionsCsv.edges.forEach(item =>
-      petitionsArray.push(
+const Vote = ({ data }) => {
+  function getVoteData(data) {
+    const voteArray = []
+    data.allTakeBlactionVoteCsv.edges.forEach(item =>
+      voteArray.push(
         <DataList
           title={item.node.Name}
           shortDesc={item.node.Short_description}
           imgSrc={item.node.Thumbnail}
-          longDesc={item.node.Long_Description}
+          longDesc={item.node.Long_description}
           extLink={item.node.External_Link}
         />
       )
     )
-    return petitionsArray
+    return voteArray
   }
 
   return (
     <Layout>
       <div className="category-header">
         <h2>
-          Petitions<span> ✊🏾</span>
+          Vote<span> ✊🏾</span>
         </h2>
         <h4>
-          Support those who are starting campaigns, mobilizing supporters, and
-          working with decision makers to drive solutions.
+          Stay informed about elections, your voting rights, elected officials,
+          and political candidates.
         </h4>
       </div>
-      <div id="data-container">{getPetitionsData(data)}</div>
+      <div id="data-container">{getVoteData(data)}</div>
     </Layout>
   )
 }
 
-export default Petitions
+export default Vote

@@ -1,47 +1,53 @@
 import React from "react"
-import Layout from "../components/layout"
-import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
-const Donations = ({ data }) => {
-  return (
-    <Layout>
-      <div id="data-container">
-        <h2>
-          Take #Blaction now<span> ✊🏾</span>
-        </h2>
-        <h4>Donate</h4>
-
-        {getDonationData(data)}
-      </div>
-    </Layout>
-  )
-}
-
-function getDonationData(data) {
-  const donationsArray = []
-  data.allDonations.edges.forEach(item =>
-    donationsArray.push(
-      <div className="data">
-        <a href={item.node.link}>{item.node.name}</a>
-        <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
-      </div>
-    )
-  )
-  return donationsArray
-}
+import DataList from "../components/datalist"
 
 export const query = graphql`
-  query DonationPageQuery {
-    allDonations {
+  query MyDonationsQuery {
+    allTakeBlactionOrganizationsDonateSCsv {
       edges {
         node {
-          name
-          link
+          Name
+          Short_Description
+          Long_Description
+          Thumbnail
+          External_Link
         }
       }
     }
   }
 `
+
+const Donations = ({ data }) => {
+  function getDonationsData(data) {
+    const donationsArray = []
+    data.allTakeBlactionOrganizationsDonateSCsv.edges.forEach(item =>
+      donationsArray.push(
+        <DataList
+          title={item.node.Name}
+          shortDesc={item.node.Short_Description}
+          imgSrc={item.node.Thumbnail}
+          longDesc={item.node.Long_Description}
+          extLink={item.node.External_Link}
+        />
+      )
+    )
+    return donationsArray
+  }
+
+  return (
+    <Layout>
+      <div className="category-header">
+        <h2>
+          Donate<span> ✊🏾</span>
+        </h2>
+        <h4>Support organizations fighting for change.</h4>
+      </div>
+      <div id="data-container">{getDonationsData(data)}</div>
+    </Layout>
+  )
+}
 
 export default Donations

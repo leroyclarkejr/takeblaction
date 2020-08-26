@@ -26,7 +26,15 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
-    `webflow-api`,
+    `gatsby-transformer-csv`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+      },
+    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -5,6 +5,8 @@ $body-font: "Raleway", sans-serif;
 $poppins: "Poppins", sans-serif;
 $black: #16181c;
 $whitetitle: rgba(255, 255, 255, 0.7);
+$darkgray: #28292e;
+$lightblack: #1e1f25;
 
 body {
   width: 100%;
@@ -37,6 +39,13 @@ h3 {
 
 .bold {
   font-weight: 700;
+}
+
+.header-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 #header {
@@ -155,25 +164,27 @@ h3 {
   // flex-wrap: wrap;
   // padding-top: 200px;
   background-color: $black;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 10px 0px 0px;
   overflow: scroll;
-
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
   // color: white;
 
   .active {
-    border-radius: 38px;
+    // border-radius: 38px;
     color: black;
-    background-color: white;
+    background-color: $black;
+    border-bottom: 2px solid white;
     transition: all 0.5s;
 
     h3 {
-      color: black;
+      color: white;
     }
   }
 
   h3 {
     color: $whitetitle;
-    padding: 4px 12px 4px 12px;
+    padding: 4px 12px 20px 20px;
     font-size: 16px;
     line-height: 24px;
     white-space: nowrap;
@@ -188,6 +199,9 @@ h3 {
 
 #main-content {
   width: 100%;
+  max-width: 840px;
+  padding-top: 150px;
+  margin: 0 auto;
 }
 
 #heading h2 {
@@ -196,74 +210,111 @@ h3 {
   line-height: 24px;
 }
 
+.category-header {
+  padding: 40px 35px;
+  background-color: $darkgray;
+  border-left: 6px solid white;
+}
+
 #data-container {
   display: flex;
   flex-direction: column;
-
-  max-width: 700px;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   background-color: $black;
   color: white;
-  // margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 16px;
-  padding-top: 40px;
-  padding-bottom: 18px;
-  height: 100%;
-  border-radius: 3px;
 
-  p {
-    padding: 100px;
+  .data-list-item:hover {
+    background-color: $darkgray;
   }
 
-  h2 {
+  .data-list-item {
+    width: 100%;
+
+    border-bottom: 0.5px $darkgray solid;
+
+    // position:relative;
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 10px 20px;
+    }
+
+    .content-text {
+      display: flex;
+      flex-direction: column;
+
+      // padding: 0 20px;
+    }
+
+    .content-image {
+      width: 50px;
+      height: 50px;
+      margin-left: 10px;
+
+      img {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .more-content {
+    max-height: 0;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: $lightblack;
+
+    // display: block;
+    overflow: hidden;
+    padding-left: 60px;
+    padding-right: 60px;
+    // border-top: 1px solid gray;
+
+    // position: absolute;
+    transition: opacity 0.5s cubic-bezier(0.1, 0.44, 0.27, 1.32);
+    // transform: translatey(-100%);
+
+    p {
+      margin-top: 20px;
+      line-height: 1.3;
+    }
+
+    a.tbutton {
+      display: inline-block;
+      text-decoration: none;
+      max-width: 185px;
+      padding: 12px 24px;
+      border: solid 1.5px #ffffff;
+      border-radius: 4px;
+      background-color: $lightblack;
+      color: white;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: $poppins;
+      font-size: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+
+  h3 {
     font-family: $poppins;
     font-weight: 700;
     font-size: 24px;
+    color: white;
     // line-height: 24px;
     margin-bottom: 15px;
-    padding-left: 30px;
   }
   h4 {
     font-size: 21px;
     font-weight: 700;
-    padding-left: 30px;
-  }
-
-  .data {
-    padding: 20px;
-    // border: 1px solid white;
-    max-width: 600px;
-    text-align: left;
-    // border-top: solid 1px rgba(255, 255, 255, 0.06);
-    border-bottom: solid 1px rgba(255, 255, 255, 0.06);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    // .solid {
-    //   border-top: 1px solid #bbb;
-    // }
-    img {
-      width: 5px;
-      height: 5px;
-      fill: white;
-    }
-
-    a {
-      font-family: $poppins;
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 100%;
-      color: white;
-      width: 100%;
-      padding: 14.5px 0 14.5px 14.5px;
-      text-decoration: none;
-    }
-
-    p {
-      color: white;
-    }
+    margin-top: 20px;
   }
 }
 
@@ -317,26 +368,4 @@ h3 {
 
   text-align: center;
   padding: 10px;
-}
-
-@media (max-width: 750px) {
-  #hero {
-    flex-direction: column;
-    div {
-      width: 100%;
-      padding: 40px;
-      max-width: 500px;
-    }
-  }
-
-  #header {
-    padding: 5px 20px 5px 20px;
-    img {
-      width: 150px;
-    }
-  }
-
-  #take-blaction {
-    padding: 40px 20px 40px 20px;
-  }
 }

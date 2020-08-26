@@ -1,52 +1,51 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight"
 
-// const Books = ({ data }) => {
-//   return (
-//     <Layout>
-//       <div id="data-container">
-//         <h2>
-//           Take #Blaction now<span> ✊🏾</span>
-//         </h2>
-//         <h4>books</h4>
+import DataList from "../components/datalist"
 
-//         {getbooksData(data)}
-//       </div>
-//     </Layout>
-//   )
-// }
+export const query = graphql`
+  query MyBooksQuery {
+    allTakeBlactionBooksCsv {
+      edges {
+        node {
+          Name
+          Short_description
+          Long_Description
+          Thumbnail
+        }
+      }
+    }
+  }
+`
 
-// function getbooksData(data) {
-//   const booksArray = []
-//   data.allBooks.edges.forEach(item =>
-//     booksArray.push(
-//       <div className="data">
-//         <a href={item.node.link}>
-//           {item.node.title} By {item.node.author}
-//         </a>
+const Books = ({ data }) => {
+  function getBooksData(data) {
+    const booksArray = []
+    data.allTakeBlactionBooksCsv.edges.forEach(item =>
+      booksArray.push(
+        <DataList
+          title={item.node.Name}
+          shortDesc={item.node.Short_description}
+          imgSrc={item.node.Thumbnail}
+          longDesc={item.node.Long_Description}
+        />
+      )
+    )
+    return booksArray
+  }
 
-//         <KeyboardArrowRightIcon width="10px"></KeyboardArrowRightIcon>
-//       </div>
-//     )
-//   )
-//   return booksArray
-// }
+  return (
+    <Layout>
+      <div className="category-header">
+        <h2>
+          Books<span> ✊🏾</span>
+        </h2>
+        <h4>Support organizations fighting for change.</h4>
+      </div>
+      <div id="data-container">{getBooksData(data)}</div>
+    </Layout>
+  )
+}
 
-// export const query = graphql`
-//   query BooksPageQuery {
-//     allBooks {
-//       edges {
-//         node {
-//           title
-//           link
-//           author
-//         }
-//       }
-//     }
-//   }
-// `
-
-// export default Books
-
-
+export default Books

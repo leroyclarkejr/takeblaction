@@ -32,22 +32,19 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header
-        menuLinks={data.site.siteMetadata.menuLinks}
-        siteTitle={data.site.siteMetadata.title}
-      />
-
-      <div>
-        {/* <Herosection /> */}
+      <div className="header-wrapper">
+        <Header />
         <Jumplinks />
-        <div id="main-content">{children}</div>
-
-        <footer id="footer">
-          Take Blaction © {new Date().getFullYear()}, Made with
-          {` `}
-          <span role="img">❤️</span>
-        </footer>
       </div>
+      {/* <Herosection /> */}
+
+      <div id="main-content">{children}</div>
+
+      <footer id="footer">
+        Take Blaction © {new Date().getFullYear()}, Made with
+        {` `}
+        <span role="img">❤️</span>
+      </footer>
     </>
   )
 }

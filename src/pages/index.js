@@ -32,18 +32,6 @@ const IndexPage = ({ children }) => (
       </div>
     </div>
 
-    {/* <p>
-      #TAKEBLACTION is a diverse group invested in making lasting, positive and
-      impactful change. We've created a collective working to define the term,
-      #Blact (verb): to act with the intent of benefitting black lives.
-    </p>
-
-    <p>
-      We recognize that credible black justice resources can be difficult to
-      find. TakeBlaction is here to make these resources as accessible as
-      possible.
-    </p> */}
-
     <div id="contact">
       <div>
         <h2>How to help:</h2>
