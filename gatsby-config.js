@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Take Blaction`,
@@ -47,13 +43,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: "gatsby-plugin-mailchimp",
-      options: {
-        endpoint:
-          "https://takeblaction.us10.list-manage.com/subscribe/post?u=1265fbb10296b33af3ae2993b&amp;id=c2552faff7",
-      },
-    },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
