@@ -2,6 +2,8 @@ import React from "react"
 import { useState, useRef } from "react"
 import { useOnClickOutside } from "./hooks"
 
+import arrow from "../images/arrow.svg"
+
 const DataList = ({
   title,
   shortDesc,
@@ -21,8 +23,12 @@ const DataList = ({
     <div
       className="data-list-item"
       onClick={() => setMoreContent(!morecontent)}
+      onKeyPress={() => setMoreContent(!morecontent)}
       key={title}
       ref={node}
+      aria-label="List item"
+      role="menuitem"
+      tabIndex={0}
     >
       <div className="content">
         <div className="content-text">
@@ -30,7 +36,7 @@ const DataList = ({
 
           <p>
             {category}
-            <br /> {shortDesc}
+            {shortDesc}
           </p>
         </div>
         <div
@@ -46,11 +52,12 @@ const DataList = ({
           opacity: morecontent ? "1" : "0",
         }}
       >
-        <h4>Brief</h4>
+        <h5>Brief</h5>
         <p>{longDescP}</p>
 
         <a href={extLink} className="tbutton">
-          Take Blaction ↪
+          Take Blaction
+          <img src={arrow} alt="Arrow icon" />
         </a>
       </div>
     </div>

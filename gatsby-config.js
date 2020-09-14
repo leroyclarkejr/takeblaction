@@ -35,7 +35,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Take Blaction`,
-        short_name: `TB`,
+        short_name: `Take Blaction`,
         start_url: `/`,
         background_color: `#141414`,
         theme_color: `#141414`,

@@ -1,77 +1,96 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Petitions from "./petitions"
-import Mailchimp from "../components/mailchimp"
-import Button from "@material-ui/core/Button"
 
-import tbblk from "../images/tb-bgwht.png"
+import Header from "../components/header"
+import Jumplinks from "../components/jumplinks"
 
 import SEO from "../components/seo"
 
 const IndexPage = ({ children }) => (
-  <Layout>
-    {/* <SEO title="Home" /> */}
-
-    <div id="hero">
-      <div>
-        <img src={tbblk} alt="Take blaction"></img>
-      </div>
-
-      <div>
-        <h2>its time for change.</h2>
-        <p>
-          The goal of this collective is to compile{" "}
-          <span className="bold">resources for black justice </span>
-          into one place so that anyone can easily access and navigate all of
-          the databanks, resources, and links to black justice materials.
-        </p>
-
-        <Button variant="contained">GET RESOURCES FOR BLACK JUSTICE</Button>
-      </div>
+  <>
+    <div className="header-wrapper">
+      <Header />
+      <SEO />
+      <Jumplinks />
     </div>
 
-    <div id="contact">
-      <div>
-        <h2>How to help:</h2>
+    <section id="hero">
+      <div className="hero-copy">
+        <div className="tb-heading">
+          <h1>
+            Take <span>Blaction</span>
+          </h1>
+        </div>
         <p>
-          We've made it easy to<span class="bold"> share information </span>with
-          your friends and communities compiling all of the circulating
-          <span class="bold"> black justice resources </span>
-          into one place
-        </p>
-
-        <p>
-          We are looking for more volunteers to curate more resources
-          and empower the black community!
-        </p>
-
-        <p>
-          If you'd like to get more involved with the collective, please email
-          us a message at <strong> takeblaction@gmail.com </strong>for more
-          information.
+          Take Blaction is a collective group invested in making lasting,
+          positive and impactful change. We've created a collective working to
+          define the term,{" "}
+          <strong>
+            Blact (verb): to act with the intent of benefitting Black Lives.
+          </strong>
         </p>
         <p>
-          Made with <span role="img">❤️</span>
-          <br />
-          the tb. team
+          The goal of this collective is to compile resources for Black racial
+          and social justice into one place so that anyone can easily access and
+          navigate all of the databanks, resources, and links to black justice
+          materials.
         </p>
       </div>
-    </div>
+    </section>
 
-    {/* <div id="cta">
-      <h3>
-        #Blact (verb): to act with the intent of benefiting black lives. Join us
-        as we #takeblaction
-      </h3>
-      <Mailchimp />
-    </div> */}
-  </Layout>
+    <footer id="footer">
+      Take Blaction © {new Date().getFullYear()}, Made with
+      {` `}
+      <span role="img" aria-label="Heart Icon">
+        ❤️
+      </span>
+    </footer>
+  </>
 )
 
 export default IndexPage
 
-{
-  /* <form action="//mc.us10.list-manage.com/signup-form/subscribe?u=1265fbb10296b33af3ae2993b&amp;id=00d69fe1f0 */
-}
+// <Layout>
+//     <section id="hero">
+//       <div className="hero-copy">
+//         <div className="tb-heading">
+//           <h1>
+//             Take <span>Blaction</span>
+//           </h1>
+//         </div>
+//         <p>
+//           Take Blaction is a collective group invested in making lasting,
+//           positive and impactful change. We've created a collective working to
+//           define the term, Blact (verb): to act with the intent of benefitting
+//           Black Lives.
+//         </p>
+//         <p>
+//           The goal of this collective is to compile resources for Black racial
+//           and social justice into one place so that anyone can easily access and
+//           navigate all of the databanks, resources, and links to black justice
+//           materials.
+//         </p>
+//       </div>
+//     </section>
+
+//     <div id="contact">
+//       <div>
+//         <h2>How to help:</h2>
+
+//         <p>
+//           If you'd like to get more involved with the collective, please email
+//           us a message at <strong> takeblaction@gmail.com </strong>for more
+//           information.
+//         </p>
+//         <p>
+//           Made with{" "}
+//           <span role="img" aria-label="Heart Icon">
+//             ❤️
+//           </span>
+//           <br />
+//           the tb. team
+//         </p>
+//       </div>
+//     </div>
+//   </Layout>

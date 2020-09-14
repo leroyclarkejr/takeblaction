@@ -40,9 +40,7 @@ const Donations = ({ data }) => {
   return (
     <Layout>
       <div className="category-header">
-        <h2>
-          Donate<span> ✊🏾</span>
-        </h2>
+        <h2>Donate</h2>
         <h4>Support organizations fighting for change.</h4>
       </div>
       <div id="data-container">{getDonationsData(data)}</div>
