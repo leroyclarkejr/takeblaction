@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Jumplinks from "./jumplinks"
 import Herosection from "./herosection"
+import SEO from "./seo"
 import "../styles/base.css"
 import "../styles/styles.scss"
 import "../styles/styles.css"
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
     <>
       <div className="header-wrapper">
         <Header />
+        <SEO />
         <Jumplinks />
       </div>
       {/* <Herosection /> */}

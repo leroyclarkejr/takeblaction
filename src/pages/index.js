@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button"
 
 import tbblk from "../images/tb-bgwht.png"
 
-// import SEO from "../components/seo"
+import SEO from "../components/seo"
 
 const IndexPage = ({ children }) => (
   <Layout>
