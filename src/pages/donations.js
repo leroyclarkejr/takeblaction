@@ -6,7 +6,7 @@ import DataList from "../components/datalist"
 
 export const query = graphql`
   query MyDonationsQuery {
-    allTakeBlactionOrganizationsDonateSCsv {
+    allDonateCsv {
       edges {
         node {
           Name
@@ -23,7 +23,7 @@ export const query = graphql`
 const Donations = ({ data }) => {
   function getDonationsData(data) {
     const donationsArray = []
-    data.allTakeBlactionOrganizationsDonateSCsv.edges.forEach(item =>
+    data.allDonateCsv.edges.forEach(item =>
       donationsArray.push(
         <DataList
           title={item.node.Name}

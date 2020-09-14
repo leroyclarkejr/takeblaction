@@ -21,7 +21,6 @@ const Header = () => {
             ></img>
           </Link>
         </h1>
-
         <div id="nav" ref={node}>
           <button
             className="nav-button"

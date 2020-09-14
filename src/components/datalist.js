@@ -1,21 +1,42 @@
 import React from "react"
-import { useState } from "react"
-const DataList = ({ title, shortDesc, imgSrc, longDesc, extLink }) => {
+import { useState, useRef } from "react"
+import { useOnClickOutside } from "./hooks"
+
+const DataList = ({
+  title,
+  shortDesc,
+  imgSrc,
+  longDesc,
+  extLink,
+  category,
+}) => {
   const [morecontent, setMoreContent] = useState(false)
+  const node = useRef()
+  useOnClickOutside(node, () => setMoreContent(false))
+
+  let str = longDesc
+  const longDescP = str.replace(/(<([^>]+)>)/gi, "")
 
   return (
     <div
       className="data-list-item"
       onClick={() => setMoreContent(!morecontent)}
+      key={title}
+      ref={node}
     >
       <div className="content">
         <div className="content-text">
           <h3>{title}</h3>
-          <p>{shortDesc}</p>
+
+          <p>
+            {category}
+            <br /> {shortDesc}
+          </p>
         </div>
-        <div className="content-image">
-          <img src={imgSrc} />
-        </div>
+        <div
+          className="content-image"
+          style={{ backgroundImage: "url(" + imgSrc + ")" }}
+        ></div>
       </div>
 
       <div
@@ -26,7 +47,7 @@ const DataList = ({ title, shortDesc, imgSrc, longDesc, extLink }) => {
         }}
       >
         <h4>Brief</h4>
-        <p>{longDesc}</p>
+        <p>{longDescP}</p>
 
         <a href={extLink} className="tbutton">
           Take Blaction ↪

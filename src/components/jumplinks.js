@@ -29,7 +29,23 @@ class Jumplinks extends React.Component {
         </Link>
 
         <Link to="/books/" className="main-link" activeClassName="active">
-          <h3>Books</h3>
+          <h3>Read</h3>
+        </Link>
+        <Link to="/podcasts/" className="main-link" activeClassName="active">
+          <h3>Listen</h3>
+        </Link>
+        <Link to="/healthcare/" className="main-link" activeClassName="active">
+          <h3>Healthcare</h3>
+        </Link>
+        <Link to="/watch/" className="main-link" activeClassName="active">
+          <h3>Watch</h3>
+        </Link>
+        <Link
+          to="/organizations/"
+          className="main-link"
+          activeClassName="active"
+        >
+          <h3>Explore</h3>
         </Link>
       </div>
     )

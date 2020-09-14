@@ -5,36 +5,36 @@ import Layout from "../components/layout"
 import DataList from "../components/datalist"
 
 export const query = graphql`
-  query MyVoteQuery {
-    allVoteCsv {
+  query MyOrganizationsQuery {
+    allOrganizationsCsv {
       edges {
         node {
           Name
-          Short_description
-          Long_description
+          Short_Description
+          Long_Description
           Thumbnail
-          External_Link
+          Website
         }
       }
     }
   }
 `
 
-const Vote = ({ data }) => {
-  function getVoteData(data) {
-    const voteArray = []
-    data.allVoteCsv.edges.forEach(item =>
-      voteArray.push(
+const Organizations = ({ data }) => {
+  function getOrganizationsData(data) {
+    const organizationArray = []
+    data.allOrganizationsCsv.edges.forEach(item =>
+      organizationArray.push(
         <DataList
           title={item.node.Name}
-          shortDesc={item.node.Short_description}
+          shortDesc={item.node.Short_Description}
           imgSrc={item.node.Thumbnail}
-          longDesc={item.node.Long_description}
-          extLink={item.node.External_Link}
+          longDesc={item.node.Long_Description}
+          extLink={item.node.Website}
         />
       )
     )
-    return voteArray
+    return organizationArray
   }
 
   return (
@@ -47,9 +47,9 @@ const Vote = ({ data }) => {
           throughout the world, we recommend these:
         </h4>
       </div>
-      <div id="data-container">{getVoteData(data)}</div>
+      <div id="data-container">{getOrganizationsData(data)}</div>
     </Layout>
   )
 }
 
-export default Vote
+export default Organizations

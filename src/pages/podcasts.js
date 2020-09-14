@@ -5,14 +5,14 @@ import Layout from "../components/layout"
 import DataList from "../components/datalist"
 
 export const query = graphql`
-  query MyVoteQuery {
-    allVoteCsv {
+  query PodcastsQuery {
+    allPodcastsCsv {
       edges {
         node {
-          Name
-          Short_description
-          Long_description
+          long_description
+          short_description
           Thumbnail
+          Name
           External_Link
         }
       }
@@ -20,36 +20,38 @@ export const query = graphql`
   }
 `
 
-const Vote = ({ data }) => {
-  function getVoteData(data) {
-    const voteArray = []
-    data.allVoteCsv.edges.forEach(item =>
-      voteArray.push(
+const Podcasts = ({ data }) => {
+  function getPodcastsData(data) {
+    const podcastsArray = []
+
+    data.allPodcastsCsv.edges.forEach(item =>
+      podcastsArray.push(
         <DataList
           title={item.node.Name}
-          shortDesc={item.node.Short_description}
+          shortDesc={item.node.short_description}
           imgSrc={item.node.Thumbnail}
-          longDesc={item.node.Long_description}
+          longDesc={item.node.long_description}
           extLink={item.node.External_Link}
+          key={item.node.Name}
         />
       )
     )
-    return voteArray
+    return podcastsArray
   }
 
   return (
     <Layout>
       <div className="category-header">
-        <h2>Listen to Podcasts</h2>
+        <h2>Listen</h2>
         <h4>
           If you enjoy the long-form structure of podcasts for self-educating
           and learning more about the issues surrounding discrimination
           throughout the world, we recommend these:
         </h4>
       </div>
-      <div id="data-container">{getVoteData(data)}</div>
+      <div id="data-container">{getPodcastsData(data)}</div>
     </Layout>
   )
 }
 
-export default Vote
+export default Podcasts
