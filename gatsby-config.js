@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Take Blaction`,
@@ -7,10 +11,6 @@ module.exports = {
       {
         name: "About us",
         link: "/",
-      },
-      {
-        name: "Blact now",
-        link: "/petitions/",
       },
     ],
   },
@@ -23,6 +23,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
     `gatsby-transformer-csv`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,6 +49,19 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-167200825-2",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: "AHMV2P30NC",
+        apiKey: "787c5edc41e9332e3720086a973fd4eb",
+        indexName: "test_TB",
+
+        queries: require("./src/utils/algolia-queries"),
+        chunksize: 10000,
+        enablePartialUpdates: true,
+        matchFields: ["Slug"],
       },
     },
   ],
