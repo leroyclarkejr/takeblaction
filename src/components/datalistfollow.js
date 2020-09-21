@@ -13,7 +13,6 @@ const DataListFollow = ({
   shortDesc,
   imgSrc,
   longDesc,
-  extLink,
   category,
   facebook,
   instagram,
@@ -49,7 +48,6 @@ const DataListFollow = ({
         <div
           className="content-image"
           style={{ backgroundImage: "url(" + imgSrc + ")" }}
-          alt={imgSrc}
         ></div>
       </div>
 

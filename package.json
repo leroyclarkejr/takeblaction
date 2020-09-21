@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "TakeBlaction",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Taking action for benefit of Black Lives",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Leroy Clarje Jr. <hello@ldcjr.dev>",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -51,7 +51,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/ldcjrStudio/takeblaction"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

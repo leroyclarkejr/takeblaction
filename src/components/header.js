@@ -77,13 +77,13 @@ const Header = () => {
               <p>Connect with us</p>
               <div className="our-social">
                 <OutboundLink href="https://www.facebook.com/takeblaction">
-                  <img src={FB} alt="Link to our Facebook page." />
+                  <img src={FB} alt="Link to our Facebook page" />
                 </OutboundLink>
                 <OutboundLink href="https://www.instagram.com/takeblaction/">
-                  <img src={IG} alt="Link to our Instagram page." />
+                  <img src={IG} alt="Link to our Instagram page" />
                 </OutboundLink>
                 <OutboundLink href="https://twitter.com/takeblaction">
-                  <img src={TW} alt="Link to our Twitter page." />
+                  <img src={TW} alt="Link to our Twitter page" />
                 </OutboundLink>
               </div>
               <p>

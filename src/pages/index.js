@@ -6,6 +6,10 @@ import Jumplinks from "../components/jumplinks"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 
+import "../styles/base.css"
+import "../styles/styles.scss"
+import "../styles/styles.css"
+
 const IndexPage = ({ children }) => (
   <>
     <div className="header-wrapper">

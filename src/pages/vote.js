@@ -40,11 +40,10 @@ const Vote = ({ data }) => {
   return (
     <Layout>
       <div className="category-header">
-        <h2>Listen to Podcasts</h2>
+        <h2>Vote</h2>
         <h4>
-          If you enjoy the long-form structure of podcasts for self-educating
-          and learning more about the issues surrounding discrimination
-          throughout the world, we recommend these:
+          Stay informed about elections, your voting rights, elected officials,
+          and political candidates.
         </h4>
       </div>
       <div id="data-container">{getVoteData(data)}</div>
