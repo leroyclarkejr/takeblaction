@@ -1,9 +1,9 @@
 {
-  "name": "TakeBlaction",
+  "name": "take-blaction",
   "private": true,
-  "description": "Taking action for benefit of Black Lives",
+  "description": "Taking action for the benefit of Black Lives",
   "version": "0.1.0",
-  "author": "Leroy Clarje Jr. <hello@ldcjr.dev>",
+  "author": "Leroy Clarke Jr <hello@ldcjr.dev>",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -51,7 +51,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ldcjrStudio/takeblaction"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
