@@ -27,7 +27,7 @@ const DataList = ({
       key={title}
       ref={node}
       aria-label="List item"
-      role="menuitem"
+      role="menu item"
       tabIndex={0}
     >
       <div className="content">

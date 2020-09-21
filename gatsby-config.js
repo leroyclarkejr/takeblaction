@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Take Blaction`,
-    description: `Taking action for black lives`,
+    description: `Taking action for benefit of Black Lives`,
     author: `@ldcjr`,
     menuLinks: [
       {
