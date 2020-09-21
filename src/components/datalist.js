@@ -42,6 +42,7 @@ const DataList = ({
         <div
           className="content-image"
           style={{ backgroundImage: "url(" + imgSrc + ")" }}
+          alt={imgSrc}
         ></div>
       </div>
 
@@ -56,7 +57,7 @@ const DataList = ({
         <h5>Brief</h5>
         <p>{longDescP}</p>
 
-        <a href={extLink} className="tbutton">
+        <a href={extLink} className="tbutton" aria-label="Take Blaction">
           Blact Now!
           <img src={arrow} alt="Arrow icon" />
         </a>

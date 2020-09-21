@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 
 import Header from "./header"
 import Jumplinks from "./jumplinks"
-import HeroSection from "./hero"
 
 import SEO from "./seo"
 import "../styles/base.css"
@@ -12,20 +11,6 @@ import "../styles/styles.scss"
 import "../styles/styles.css"
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //         menuLinks {
-  //           name
-  //           link
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <>
       <div className="header-wrapper">

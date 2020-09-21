@@ -2,7 +2,6 @@ import React from "react"
 import { useState, useRef } from "react"
 import { useOnClickOutside } from "./hooks"
 
-import arrow from "../images/right-arrow.svg"
 import FB from "../images/FB2.svg"
 import IG from "../images/IG2.svg"
 import TW from "../images/TWTR2.svg"
@@ -50,6 +49,7 @@ const DataListFollow = ({
         <div
           className="content-image"
           style={{ backgroundImage: "url(" + imgSrc + ")" }}
+          alt={imgSrc}
         ></div>
       </div>
 
