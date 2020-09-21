@@ -66,24 +66,18 @@ const DataListFollow = ({
 
         <h5>Follow on social</h5>
         <div className="data-social-links">
-          {facebook === "" ? (
-            ""
-          ) : (
+          {facebook === "" ? null : (
             <OutboundLink href={facebook}>
               <img src={FB} alt={`${title} link to Facebook`} />
             </OutboundLink>
           )}
-          {instagram === "" ? (
-            ""
-          ) : (
+          {instagram === "" ? null : (
             <OutboundLink href={instagram}>
               <img src={IG} alt={`${title} link to Instagram`} />
             </OutboundLink>
           )}
 
-          {twitter === "" ? (
-            ""
-          ) : (
+          {twitter === "" ? null : (
             <OutboundLink href={twitter}>
               <img src={TW} alt={`${title} link to Twitter`} />
             </OutboundLink>

@@ -76,6 +76,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  title: `Take Blaction`,
 }
 
 SEO.propTypes = {

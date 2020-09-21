@@ -78,7 +78,7 @@ h5 {
   justify-content: space-between;
   align-items: center;
   padding: 10px 40px 10px 40px;
-  border-bottom: 1px solid white;
+  border-bottom: 0.5px solid gray;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
   position: relative;
   z-index: 9;
@@ -235,8 +235,8 @@ h5 {
   background-color: $black;
   padding: 20px 0px 0px 0px;
   overflow: scroll;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border-top: 0.5px solid gray;
+  border-bottom: 0.5px solid gray;
   z-index: 9;
   // color: white;
 
