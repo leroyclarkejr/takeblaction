@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 
 import Header from "./header"
 import Jumplinks from "./jumplinks"
+import HeroSection from "./hero"
 
 import SEO from "./seo"
 import "../styles/base.css"
@@ -36,11 +37,13 @@ const Layout = ({ children }) => {
       <div id="main-content">{children}</div>
 
       <footer id="footer">
-        Take Blaction © {new Date().getFullYear()}, Made with
-        {` `}
-        <span role="img" aria-label="Heart Icon">
-          ❤️
-        </span>
+        <p>
+          Take Blaction © {new Date().getFullYear()}, Made with
+          {` `}
+          <span role="img" aria-label="Heart Icon">
+            ❤️
+          </span>
+        </p>
       </footer>
     </>
   )

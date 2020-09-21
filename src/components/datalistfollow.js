@@ -3,14 +3,22 @@ import { useState, useRef } from "react"
 import { useOnClickOutside } from "./hooks"
 
 import arrow from "../images/right-arrow.svg"
+import FB from "../images/FB2.svg"
+import IG from "../images/IG2.svg"
+import TW from "../images/TWTR2.svg"
 
-const DataList = ({
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+
+const DataListFollow = ({
   title,
   shortDesc,
   imgSrc,
   longDesc,
   extLink,
   category,
+  facebook,
+  instagram,
+  twitter,
 }) => {
   const [morecontent, setMoreContent] = useState(false)
   const node = useRef()
@@ -54,15 +62,36 @@ const DataList = ({
         }}
       >
         <h5>Brief</h5>
-        <p>{longDescP}</p>
+        <p style={{ marginBottom: "24px" }}>{longDescP}</p>
 
-        <a href={extLink} className="tbutton">
-          Blact Now!
-          <img src={arrow} alt="Arrow icon" />
-        </a>
+        <h5>Follow on social</h5>
+        <div className="data-social-links">
+          {facebook === "" ? (
+            ""
+          ) : (
+            <OutboundLink href={facebook}>
+              <img src={FB} alt={`${title} link to Facebook`} />
+            </OutboundLink>
+          )}
+          {instagram === "" ? (
+            ""
+          ) : (
+            <OutboundLink href={instagram}>
+              <img src={IG} alt={`${title} link to Instagram`} />
+            </OutboundLink>
+          )}
+
+          {twitter === "" ? (
+            ""
+          ) : (
+            <OutboundLink href={twitter}>
+              <img src={TW} alt={`${title} link to Twitter`} />
+            </OutboundLink>
+          )}
+        </div>
       </div>
     </div>
   )
 }
 
-export default DataList
+export default DataListFollow
