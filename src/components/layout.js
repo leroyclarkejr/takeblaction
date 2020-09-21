@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 
 import Header from "./header"
 import Jumplinks from "./jumplinks"
+import Hero from "./herosection"
 
 import SEO from "./seo"
 import "../styles/base.css"
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
   //     }
   //   }
   // `)
+  console.log(window.location.href)
 
   return (
     <>
@@ -32,6 +34,8 @@ const Layout = ({ children }) => {
         <SEO />
         <Jumplinks />
       </div>
+
+      <Hero />
 
       <div id="main-content">{children}</div>
 

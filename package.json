@@ -9,6 +9,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.10.0",
     "@reach/router": "^1.3.4",
+    "algoliasearch": "^4.5.1",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.51",
@@ -33,6 +34,7 @@
     "react-burger-menu": "^2.7.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-instantsearch-dom": "^6.7.0",
     "webflow-api": "^0.5.0"
   },
   "devDependencies": {
