@@ -50,6 +50,9 @@ class Jumplinks extends React.Component {
         >
           <h3>Explore</h3>
         </Link>
+        <Link to="/legal/" className="main-link" activeClassName="active">
+          <h3>Legal</h3>
+        </Link>
       </div>
     )
   }
